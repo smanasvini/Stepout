@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      #registration{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(244, 244, 254, 0.5)),url(images/registration.jpg);
+    }
+    </style>
+    <script>
+        function validateForm() {
+          let x = document.forms["myForm"]["username"].value;
+          let y= document.forms["myForm"]["password"].value;
+          let a= document.forms["myForm"]["email"].value;
+          let b= document.forms["myForm"]["contact"].value;
+          let c= document.forms["myForm"]["c_pass"].value;
+
+          if (x == "") {
+            alert("Name must be filled out");
+            return false;
+          }
+          if(y==""){
+            alert("Password must not be null");
+            return false;
+          }
+          if(a==""){
+            alert("Email must not be null");
+            return false;
+          }
+          if(b==""){
+            alert("contact must not be null");
+            return false;
+          }
+          if(c==""){
+            alert("confirm password must not be null");
+            return false;
+          }
+          if(c!=y){
+            alert("password does not match try again");
+            return false;
+          }
+          alert("You have successfully registered");
+          if(x!=null&&y!=null){
+            window.location.href = 'login.html';
+        }
+        }
+       
+        </script>
+</head>
+<body>
+    <section id="registration">
+        <div class="reminder">
+            <p>Good Food Is Good Mood!</p>
+            <h1>Sign up to enjoy the delicious food...</h1>
+        </div>
+        <div class="form">
+            <h3>Sign Up!</h3>
+           <form name="myForm" action="/login.html" onsubmit="return validateForm()" method="post">
+            <input type="text" placeholder="Username" name="username" id="username" required>
+            <input type="email" placeholder="E-mail" name="email" id="email" required style="text-transform:lowercase">
+            <input type="text" placeholder="Phone Number" name="contact" id="cont">
+            <input type="password" placeholder="Password" name="password" id="password">
+            <input type="password" placeholder="Confirm Password" name="c_pass" id="c_pass">
+            <div class="btn1">
+                <a class="orange" href="javascript:validateForm()">Sign Up</a>
+            </div>
+            </form>
+        </div>
+    </section>
+
+    
+</body>
+</html>

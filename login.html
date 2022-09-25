@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    #login{
+    background-image: url(images/login1.jpg);
+    }
+    </style>
+    <script>
+        function validateForm() {
+          let x = document.forms["myForm"]["username"].value;
+          let y= document.forms["myForm"]["password"].value;
+          if (x == "") {
+            alert("Name must be filled out");
+            return false;
+          }
+          if(y==""){
+            alert("Password must not be null");
+            return false;
+          }
+          alert("You have successfully login");
+          if(x!=null&&y!=null){
+            window.location.href = 'index.html';
+        }
+        }
+       
+        </script>
+</head>
+<body>
+    <section id="login">
+        <div class="form">
+          <img src="images/profile-icon.png" alt="">
+            <h3>Login</h3>
+            <form name="myForm" action="/index.html" onsubmit="return validateForm()" method="post">
+                <input type="text" placeholder="Username" name="username" id="username">
+                <input type="password" placeholder="Password" name="password" id="password">
+                <div class="btn1">
+                    <a class="orange" href="javascript:validateForm()">Submit</a>
+                </div>  
+            </form>
+        </div>
+   </section>
+</body>
+</html>
